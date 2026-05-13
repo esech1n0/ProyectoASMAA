@@ -1,0 +1,30 @@
+<div class="contenedor-recibo">
+    <div class="cabecera-recibo">
+        <h2>SPIBBLEPY STORE</h2>
+        <p>Recibo de Escuchas Recientes</p>
+        <p>FECHA: {{FECHA_HOY}}</p>
+        <p>CLIENTE: {{NOMBRE}}</p>
+        <div class="linea-punteada"></div>
+    </div>
+    
+    <div class="titulos-columnas">
+        <span>CANT</span>
+        <span>DESCRIPCIÓN</span>
+        <span>TIEMPO</span>
+    </div>
+    <div class="linea-punteada"></div>
+
+    <div class="cuerpo-recibo">
+        {{LISTA_CANCIONES}}
+    </div>
+
+    <div class="linea-punteada"></div>
+    <div class="pie-recibo">
+        <div class="totales">
+            <span>TOTAL ITEMS:</span>
+            <span>{{CANTIDAD_ITEMS}}</span>
+        </div>
+        <p class="gracias">¡Gracias por tu visita!</p>
+        <p class="codigo-barras">|||| ||||| ||||| || ||||</p>
+    </div>
+</div>

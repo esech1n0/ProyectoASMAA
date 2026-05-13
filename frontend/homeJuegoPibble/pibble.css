@@ -1,0 +1,153 @@
+/* DISEÑO DEL JUEGO DE PIBBLE 
+   Optimizado para responsividad y Zoom del navegador
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* --- Reset y Configuración Base --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: hidden; /* El scroll lo maneja Streamlit, no el iframe */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+#game-wrapper {
+    width: 100%;
+    max-width: 600px; /* Limita el ancho en monitores grandes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contenedor-pibble {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Títulos y Texto (Unidades Relativas para el Zoom) --- */
+.titulo-pibble {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    /* Usamos rem para sincronizar con el título externo */
+    font-size: clamp(0.5rem, 2.5vw, 1.0rem); 
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#mensaje {
+    margin-top: -15px;
+    font-size: clamp(0.5rem, 2vw, 1.0rem);
+    min-height: 1.5rem;
+}
+
+/* --- Contenedor de la Imagen (Pancita) --- */
+#contenedor-imagen {
+    position: relative;
+    /* El ancho depende del viewport pero con límites */
+    width: min(80vw, 350px); 
+    aspect-ratio: 260 / 406;
+    border-radius: 30px;
+    margin: 0 auto;
+    margin-top: -50px;
+    overflow: hidden;
+}
+
+/* Capas del juego */
+#pibble-limpio,
+#pibble-sucio,
+#canvas-limpieza {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 30px;
+}
+
+#pibble-limpio { z-index: 1; }
+#pibble-sucio { z-index: 2; }
+#canvas-limpieza {
+    z-index: 3;
+    cursor: url("{{ESTROPAJO}}") 16 16, pointer;
+    touch-action: none;
+}
+
+/* --- Barra de Progreso --- */
+#barra-container {
+    width: min(85vw, 400px);
+    height: 14px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    margin: 20px 0;
+    margin-top: -40px;
+    overflow: hidden;
+    border: 2px solid #333;
+}
+
+#barra-progreso {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #8a2be2, #a855f7);
+    transition: width 0.25s ease-out;
+}
+
+/* --- Botón de Spotify (El Gran Premio) --- */
+#boton-login {
+    background: linear-gradient(135deg, #1DB954, #1ed760);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 1.2rem 2rem;
+    font-size: 0.8rem;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    text-decoration: none;
+    display: none; /* Se activa por JS */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.4);
+    margin-top: 10px;
+    width: fit-content;
+}
+
+#boton-login.activo {
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+#boton-login:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* --- Animaciones y Media Queries --- */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Tablets y Laptops pequeñas */
+@media (max-width: 768px) {
+    .titulo-pibble { font-size: 0.7rem; }
+    #contenedor-imagen { width: 50vw; }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .titulo-pibble { font-size: 0.6rem; padding: 0 10px; }
+    #contenedor-imagen { width: 70vw; }
+    #boton-login { font-size: 0.6rem; padding: 1rem; }
+}

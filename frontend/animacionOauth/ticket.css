@@ -1,0 +1,136 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended&family=Space+Mono:wght@400;700&display=swap');
+
+.contenedor-recibo {
+    width: 350px;
+    padding: 30px 20px 40px 20px;
+    margin: 40px 0; 
+    
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    color: #222; 
+    
+    /* TEXTURA DE PAPEL */
+    background-color: #f4f4f0; 
+    background-image: 
+        linear-gradient(135deg, transparent 45%, rgba(0, 0, 0, 0.04) 48%, rgba(255, 255, 255, 0.5) 50%, transparent 52%),
+        linear-gradient(90deg, transparent 70%, rgba(0, 0, 0, 0.03) 72%, transparent 74%),
+        linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.05) 41%, rgba(255,255,255,0.4) 42%, transparent 43%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+    
+    /* INCLINACIÓN Y SOMBRA SEGURA  */
+    transform: rotate(-2deg);
+    box-shadow: 
+        0 4px 10px rgba(0,0,0,0.3),  /* Sombra corta y dura */
+        0 20px 40px rgba(0,0,0,0.6); /* Sombra difuminada para dar altura */
+}
+
+.contenedor-recibo h2 { 
+    margin: 0 0 10px 0; 
+    font-size: 24px; 
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.contenedor-recibo p { 
+    margin: 3px 0; 
+    font-size: 12px; 
+    text-align: center;
+}
+
+/* Efecto de líneas separadoras del ticket (tinta desgastada) */
+.linea-punteada {
+    border-bottom: 2px dashed rgba(34, 34, 34, 0.6);
+    margin: 20px 0;
+}
+
+.titulos-columnas {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.cuerpo-recibo {
+    margin-top: 15px;
+}
+
+.ticket-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.ticket-num { 
+    width: 10%; 
+    opacity: 0.7;
+}
+
+.ticket-info { 
+    width: 65%; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.ticket-duracion { 
+    width: 20%; 
+    text-align: right; 
+}
+
+.ticket-cancion { 
+    font-weight: 700; 
+    /* Truncar texto si la canción es muy larga */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ticket-artista { 
+    font-size: 10px; 
+    opacity: 0.7; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.totales {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 25px 0;
+}
+
+.gracias { 
+    text-align: center; 
+    font-size: 13px; 
+    margin-bottom: 15px;
+}
+
+/* El código de barras en la base */
+.codigo-barras {
+    font-family: 'Libre Barcode 39 Extended', cursive; 
+    font-size: 80px; 
+    text-align: center;
+    margin: 10px 0 0 0;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.contenedor-ticket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.pibble-cashier {
+    width: 220px;
+    transform: scale(1.1);
+}

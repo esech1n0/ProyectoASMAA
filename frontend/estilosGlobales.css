@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/*Ocultar header*/
+[data-testid="stHeader"] {
+    display: none;
+}
+/* Quitar botón de menú (los tres puntitos) */
+[data-testid="stToolbar"] {
+    display: none;
+}
+
+/* Ocultar footer */
+footer {
+    visibility: hidden;
+}
+[data-testid="stFooter"]{
+    display: none;
+}
+/* Títulos Streamlit */
+[data-testid="stHeading"] h1 {
+    font-family: 'Press Start 2P', cursive !important;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+/* Header personalizado */
+.custom-header .title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+}
+/* Subtítulos personalizados */
+.titulo-columna {
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+/* Fuente para títulos */
+h1, h2, h3, .custom-header .title {
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+html, body, p, .custom-header{
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+
+:root {
+    --background-color: #0d001a;
+    --secondary-bg: #1a0b1f;
+    --primary-color: #6a0dad; /* Morado profundo */
+    --accent-color: #a855f7; /* Morado brillante */
+    --hover-color: #c084fc;  /* Morado claro */
+    --text-color: #ffffff;
+}
+
+/* Fondo general */
+[data-testid="stAppViewContainer"] {
+    background: radial-gradient(
+        circle at top left,
+        #3a132f 0%,
+        #1a0b1f 35%,
+        #0d001a 70%,
+        #000000 100%
+    );
+    color: #ffffff;
+}
+/* Quitar padding lateral */
+[data-testid="stAppViewContainer"] > .main {
+    padding: 0rem 2rem;
+}
+
+/* Ajustar contenido */
+.block-container {
+    padding-top: 6rem !important;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+/* Botones */
+[data-testid="stButton"] button {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #ffffff;
+    border-radius: 12px;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+/* Hover */
+[data-testid="stButton"] button:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--hover-color));
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+}
+
+/* Click */
+[data-testid="stButton"] button:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 5px rgba(168, 85, 247, 0.4);
+}
+/* HEADER */
+.custom-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: calc(100% - 12px);
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 12px 30px;
+
+    /* Negro transparente */
+    background: rgba(0, 0, 0, 0.6);
+
+    /* Efecto de difuminado */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* Detalles visuales */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+    /* Transición suave */
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+/* LOGO */
+.custom-header .logo {
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%; /* opcional tipo circular */
+}
+.custom-header .logo:hover {
+    transform: scale(1.1);
+    transition: 0.9s;
+}
+/* TEXTO */
+.custom-header .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #000000; /* Fondo negro */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8a2be2, #a855f7); /* Morado elegante */
+    border-radius: 10px;
+    border: 2px solid #000000; /* Contorno negro */
+    background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #a855f7, #c084fc);
+}
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #8a2be2 #000000; /* thumb | track */
+}
+
+/* Eliminar el fondo blanco del contenedor de iframes en Streamlit */
+[data-testid="stMarkdownContainer"] iframe {
+    background: transparent !important;
+}
+
+/* Contenedor del elemento incrustado */
+[data-testid="stMarkdownContainer"] {
+    background: transparent !important;
+}
+
+/* Elimina el fondo del bloque que contiene el iframe */
+[data-testid="stVerticalBlock"] {
+    background: transparent !important;
+}
+
+/* Contenedor principal del elemento */
+[data-testid="element-container"] {
+    background: transparent !important;
+}
+
+/* Evita cualquier fondo blanco residual */
+iframe {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Asegura que toda la app mantenga el fondo oscuro */
+section.main > div {
+    background-color: transparent !important;
+}

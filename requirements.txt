@@ -1,0 +1,16 @@
+#librerías EXTERNAS A PYTHON usadas en el proyecto
+
+#variables de entorno y de seguridad
+python-dotenv
+#Manejo y análisis de datos
+pandas
+#Apis
+spotipy
+pylast
+#visualización en la consola (temporal)
+tabulate
+#interfaz web
+streamlit
+streamlit-lottie
+#base de datos
+psycopg2-binary

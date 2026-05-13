@@ -1,0 +1,31 @@
+<div class="slide-semanal">
+    <h1 class="slide-completo-titulo">Tu resumen de la semana {{NUM_SEMANA}}</h1>
+    <p class="semana-fechas-grandes">{{RANGO_FECHAS}}</p>
+    <div class="contenedor-dos-columnas">
+        <div class="columna-lista">
+            <h2 class="slide-completo-subtitulo">Top 3 artistas</h2>
+            <ul class="slide-lista">
+                {{LISTA_ARTISTAS}}
+            </ul>
+        </div>
+        <div class="columna-lista">
+            <h2 class="slide-completo-subtitulo">Top 3 canciones</h2>
+            <ul class="slide-lista">
+                {{LISTA_CANCIONES}}
+            </ul>
+        </div>
+    </div>
+    <div class="slide-contenedor-tarjeta tarjeta-tiempo-semanal">
+        <h2 class="slide-subtitulo">El ritmo de tu semana</h2>
+        <div class="estadisticas-dobles">
+            <div class="estadistica-item">
+                <div class="minutos-gigantes">{{MINUTOS_TOTALES}}</div>
+                <div class="minutos-texto">minutos</div>
+            </div>
+            <div class="estadistica-item">
+                <div class="minutos-gigantes">{{CANCIONES_TOTALES}}</div>
+                <div class="minutos-texto">canciones</div>
+            </div>
+        </div>
+    </div>
+</div>

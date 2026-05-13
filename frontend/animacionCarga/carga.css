@@ -1,0 +1,99 @@
+.contenedor-pantalla-carga {
+    position: fixed !important; 
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important; 
+    background-color: rgba(18, 18, 18, 0.95) !important; 
+    z-index: 999999 !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.pibble-animacion {
+    width: 350px !important;
+    height: 350px !important;
+    object-fit: contain !important;
+    margin-bottom: 20px !important;
+}
+
+.titulo-carga {
+    color: #1db954 !important;
+    font-size: 24px !important;
+    margin: 0 0 10px 0 !important;
+    font-weight: bold !important;
+}
+
+div[data-testid="stAlert"] {
+    background-color: rgba(29, 185, 84, 0.15) !important; 
+    border: 1px solid #1DB954 !important; 
+    border-radius: 10px !important;
+    padding: 15px 30px !important;
+    margin: 0 auto 30px auto !important; /* Centrado automático */
+    width: 80% !important; 
+    max-width: 500px !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+div[data-testid="stAlert"] p {
+    color: #ffffff !important;
+    font-size: 18px !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3) !important;
+    margin: 0 !important;
+    font-weight: bold !important;
+}
+
+.contenedor-chef {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.escena {
+    position: relative;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.chef-img {
+    width: 100%;
+    display: block;
+}
+
+.plato-img {
+    position: absolute;
+    bottom: -30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%; 
+    z-index: 2;
+}
+
+div[data-testid="stButton"] {
+    margin-top: -70px !important; 
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+div[data-testid="stButton"] button {
+    background: linear-gradient(135deg, #1DB954, #1ed760) !important;
+    border: none !important;
+    border-radius: 50px !important; 
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.4) !important;
+    color: white !important;
+    padding: 10px 15px !important; 
+    font-size: 11px !important;
+}
+
+div[data-testid="stButton"] button:hover {
+    transform: scale(1.05) !important;
+    filter: brightness(1.1) !important;
+    box-shadow: 0 0 30px rgba(29, 185, 84, 0.9) !important;
+}
