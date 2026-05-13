@@ -5,16 +5,14 @@ from spotipy.cache_handler import MemoryCacheHandler
 import base64
 from visualizaciones.helpers import leer_externos, obtener_imagen_base64
 
-
-spotifyOauth=SpotifyOAuth(
-    client_id=os.getenv("SPOTIFY_CLIENT_ID"),
-    client_secret=os.getenv("SPOTIFY_CLIENT_SECRET"),
-    redirect_uri=os.getenv("SPOTIFY_REDIRECT_URI"),
-    scope="user-top-read user-read-recently-played",
-    cache_handler=MemoryCacheHandler()
-)
-
 def mostrar_pantalla_pibble():
+    spotifyOauth=SpotifyOAuth(
+        client_id=os.getenv("SPOTIFY_CLIENT_ID"),
+        client_secret=os.getenv("SPOTIFY_CLIENT_SECRET"),
+        redirect_uri=os.getenv("SPOTIFY_REDIRECT_URI"),
+        scope="user-top-read user-read-recently-played user-read-private",
+        cache_handler=MemoryCacheHandler()
+    )
     rutaCssGlobal = "frontend/estilosGlobales.css"
     try: 
         cssGlobal = leer_externos(rutaCssGlobal)
@@ -98,7 +96,7 @@ def mostrar_pantalla_pibble():
         width="100%"
         style="height: 800px; min-height: 700px; border:none; background:transparent; overflow:hidden;"
         scrolling="no"
-        sandbox="allow-scripts allow-same-origin allow-top-navigation"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
         ></iframe>'''
         st.markdown(iframeCode, unsafe_allow_html=True)    
     except:
